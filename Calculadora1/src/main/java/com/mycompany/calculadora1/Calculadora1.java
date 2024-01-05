@@ -9,8 +9,10 @@ package com.mycompany.calculadora1;
  * @author pjdiaz
  */
 public class Calculadora1 extends javax.swing.JFrame {
-int num1,num2;
-String signo;
+
+    int num1, num2; //Variables para almacenar los valores ingresador 
+    String signo; // Signo se refiere a la operacion a desarrollar para los valores ingresados
+
     /**
      * Creates new form Calculadora
      */
@@ -47,8 +49,10 @@ String signo;
         ButtonEqual = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 0, 51));
+        setBackground(new java.awt.Color(102, 102, 102));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFont(new java.awt.Font(".AppleSystemUIFont", 2, 14)); // NOI18N
+        setLocation(new java.awt.Point(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Pantalla.setForeground(new java.awt.Color(0, 0, 0));
@@ -197,71 +201,90 @@ String signo;
     }//GEN-LAST:event_ButtonCActionPerformed
 
     private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"9");
+        this.Pantalla.setText(this.Pantalla.getText() + "9");
     }//GEN-LAST:event_Button9ActionPerformed
 
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"5");
+        this.Pantalla.setText(this.Pantalla.getText() + "5");
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
-       this.Pantalla.setText(this.Pantalla.getText()+"3");
+        this.Pantalla.setText(this.Pantalla.getText() + "3");
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void ButtonEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEqualActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"0");
+        num2 = Integer.parseInt(Pantalla.getText());
+
+        switch (signo) {//switch para selecion de operacion a utilizar 
+            case "+":
+                Pantalla.setText(Integer.toString(num1 + num2));
+                break;
+            case "*":
+                Pantalla.setText(Integer.toString(num1 * num2));
+                break;
+
+            case "-":
+                Pantalla.setText(Integer.toString(num1 - num2));
+                break;
+
+            case "/":
+                Pantalla.setText(Integer.toString(num1 / num2));
+                break;
+
+        }
     }//GEN-LAST:event_ButtonEqualActionPerformed
 
     private void Button0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button0ActionPerformed
-      this.Pantalla.setText(this.Pantalla.getText()+"0");
+        this.Pantalla.setText(this.Pantalla.getText() + "0");
     }//GEN-LAST:event_Button0ActionPerformed
 
     private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"7");
+        this.Pantalla.setText(this.Pantalla.getText() + "7");
     }//GEN-LAST:event_Button7ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
-         this.Pantalla.setText(this.Pantalla.getText()+"1");
+        this.Pantalla.setText(this.Pantalla.getText() + "1");
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"2");
+        this.Pantalla.setText(this.Pantalla.getText() + "2");
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"4");
+        this.Pantalla.setText(this.Pantalla.getText() + "4");
     }//GEN-LAST:event_Button4ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"6");
+        this.Pantalla.setText(this.Pantalla.getText() + "6");
     }//GEN-LAST:event_Button6ActionPerformed
 
     private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
-        this.Pantalla.setText(this.Pantalla.getText()+"8");
+        this.Pantalla.setText(this.Pantalla.getText() + "8");
     }//GEN-LAST:event_Button8ActionPerformed
 
+    //Se almacena valor ingresdo en el Jlabel "Pantalla y se almacena en la variable nun1 al dar click en la operacion a realizar y se limpia pantalla, se ingresa el segundo valor y al dar igual se alamacena en la variable num2 y se realiza la operacion. 
     private void ButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDivActionPerformed
-       num1=Integer.parseInt(Pantalla.getText());
-       signo="/";
-       Pantalla.setText("");
+        num1 = Integer.parseInt(Pantalla.getText());
+        signo = "/";
+        Pantalla.setText("");
     }//GEN-LAST:event_ButtonDivActionPerformed
 
     private void ButtonMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMultActionPerformed
-      num1=Integer.parseInt(Pantalla.getText());
-       signo="*";
-       Pantalla.setText("");
+        num1 = Integer.parseInt(Pantalla.getText());
+        signo = "*";
+        Pantalla.setText("");
     }//GEN-LAST:event_ButtonMultActionPerformed
 
     private void ButtonRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRestActionPerformed
-      num1=Integer.parseInt(Pantalla.getText());
-       signo="-";
-       Pantalla.setText("");
+        num1 = Integer.parseInt(Pantalla.getText());
+        signo = "-";
+        Pantalla.setText("");
     }//GEN-LAST:event_ButtonRestActionPerformed
 
     private void ButtonSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSumActionPerformed
-        num1=Integer.parseInt(Pantalla.getText());
-       signo="+";
-       Pantalla.setText("");
+        num1 = Integer.parseInt(Pantalla.getText());
+        signo = "+";
+        Pantalla.setText("");
     }//GEN-LAST:event_ButtonSumActionPerformed
 
     /**
